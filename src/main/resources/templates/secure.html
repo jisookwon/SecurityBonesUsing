@@ -13,10 +13,24 @@
     <div>Welcome [[${user.firstName}]]!</div>
 
     <div sec:authorize="hasAuthority('ADMIN')">
+
+        <a href="/list">Show All Courses</a><br/>
+        Title :<span th:text="${course.title}"></span><br/>
+        Instructor :<span th:text="${course.instructor}"></span><br/>
+        Description :<p th:text="${course.description}"></p>
+        Credits :<span th:text="${course.credit}"></span><br/>
+        <a th:href="@{/delete/{id}{id=${course.id})}">Delete this course</a>
+
         Administrators will see this text.
     </div>
 
     <div sec:authorize="hasAuthority('USER')">
+        <a href="/list">Show All Courses</a><br/>
+        Title :<span th:text="${course.title}"></span><br/>
+        Instructor :<span th:text="${course.instructor}"></span><br/>
+        Description :<p th:text="${course.description}"></p>
+        Credits :<span th:text="${course.credit}"></span><br/>
+
         Users will see this text.
     </div>
 

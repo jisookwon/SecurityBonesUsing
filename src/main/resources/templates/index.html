@@ -8,7 +8,12 @@
 
     <div th:replace="base :: navlinks"></div>
 
+    <a href="/list">Show All Courses</a><br/>
+    Title :<span th:text="${course.title}"></span><br/>
+    Instructor :<span th:text="${course.instructor}"></span><br/>
+    Description :<p th:text="${course.description}"></p>
+    Credits :<span th:text="${course.credit}"></span><br/>
     <h2>Insecure Page</h2>
-
+spring
 </body>
 </html>
